@@ -14,9 +14,9 @@ export function MarkdownPreview({ content }: MarkdownPreviewProps) {
           Start typing markdown in the editor to see a live preview here.
         </p>
       ) : (
-        <ReactMarkdown className="prose max-w-none prose-headings:scroll-m-20 prose-p:leading-relaxed prose-pre:bg-gray-900 prose-pre:text-gray-50">
-          {content}
-        </ReactMarkdown>
+        <div className="prose max-w-none prose-headings:scroll-m-20 prose-p:leading-relaxed prose-pre:bg-gray-900 prose-pre:text-gray-50">
+  <ReactMarkdown>{content}</ReactMarkdown>
+</div>
       )}
     </div>
   );
