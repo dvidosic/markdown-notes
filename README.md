@@ -9,7 +9,7 @@ The project was created as an experiment to explore **AI-assisted development wo
 
 ## Live Application
 
-- `https://markdown-notes-pi.vercel.app`
+- https://markdown-notes-pi.vercel.app
 
 ## Development Process & Skills Demonstrated
 
@@ -25,7 +25,7 @@ The application code was generated with the help of Cursor, while I focused on t
 
 The goal of the project was to better understand how developers can use AI tools together with modern frameworks to build and deploy applications efficiently.
 
-## Features (MVP)
+## Features
 
 - **Authentication** (Supabase Auth)
   - Email/password sign up
