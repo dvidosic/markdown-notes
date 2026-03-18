@@ -8,9 +8,9 @@ type MarkdownPreviewProps = {
 
 export function MarkdownPreview({ content }: MarkdownPreviewProps) {
   return (
-    <div className="h-full overflow-y-auto rounded-lg border bg-white px-4 py-3 text-sm leading-relaxed">
+    <div className="h-full overflow-y-auto rounded-lg bg-white border border-slate-200 px-4 py-3 text-sm leading-relaxed">
       {content.trim().length === 0 ? (
-        <p className="text-gray-400">
+        <p className="text-slate-400">
           Start typing markdown in the editor to see a live preview here.
         </p>
       ) : (

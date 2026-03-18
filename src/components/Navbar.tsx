@@ -23,24 +23,27 @@ export function Navbar() {
   };
 
   return (
-    <header className="border-b bg-white/80 backdrop-blur">
+    <header className="bg-white border-b border-slate-200">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-        <Link href="/notes" className="text-lg font-semibold tracking-tight">
+        <Link
+          href="/notes"
+          className="text-lg font-semibold tracking-tight text-slate-800"
+        >
           Markdown Notes
         </Link>
 
-        <nav className="flex items-center gap-3 text-sm">
+        <nav className="flex items-center gap-3 text-sm text-slate-800">
           {isAuthPage ? (
             <>
               <Link
                 href="/login"
-                className="rounded-full border px-3 py-1.5 hover:bg-gray-50"
+                className="rounded-full border border-slate-300 px-3 py-1.5 text-slate-800 hover:bg-slate-50"
               >
                 Login
               </Link>
               <Link
                 href="/signup"
-                className="rounded-full bg-gray-900 px-3 py-1.5 text-white hover:bg-black"
+                className="rounded-full bg-slate-900 px-3 py-1.5 text-white hover:bg-black"
               >
                 Sign up
               </Link>
@@ -49,7 +52,7 @@ export function Navbar() {
             <button
               onClick={handleSignOut}
               disabled={isSigningOut}
-              className="rounded-full border px-3 py-1.5 text-sm hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-70"
+              className="rounded-full border border-slate-300 px-3 py-1.5 text-sm text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-70"
             >
               {isSigningOut ? "Signing out..." : "Sign out"}
             </button>

@@ -15,12 +15,14 @@ export function Sidebar({
   onCreateNote,
 }: SidebarProps) {
   return (
-    <aside className="flex h-full w-64 shrink-0 flex-col border-r bg-gray-50/80">
-      <div className="flex items-center justify-between border-b px-4 py-3">
-        <h2 className="text-sm font-semibold tracking-tight">My Notes</h2>
+    <aside className="flex h-full w-64 shrink-0 flex-col bg-white border-r border-slate-200">
+      <div className="flex items-center justify-between border-b border-slate-200 px-4 py-3">
+        <h2 className="text-sm font-semibold tracking-tight text-slate-800">
+          My Notes
+        </h2>
         <button
           onClick={onCreateNote}
-          className="inline-flex items-center justify-center rounded-full bg-gray-900 px-3 py-1 text-xs font-medium text-white shadow-sm hover:bg-black"
+          className="inline-flex items-center justify-center rounded-full bg-slate-800 px-3 py-1 text-xs font-medium text-white shadow-sm hover:bg-slate-900"
         >
           + New Note
         </button>

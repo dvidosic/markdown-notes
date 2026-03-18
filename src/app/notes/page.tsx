@@ -137,13 +137,13 @@ export default function NotesPage() {
   if (!authChecked && loading) {
     return (
       <div className="flex h-[60vh] items-center justify-center">
-        <p className="text-sm text-gray-500">Loading your notes...</p>
+        <p className="text-sm text-slate-500">Loading your notes...</p>
       </div>
     );
   }
 
   return (
-    <div className="flex h-[calc(100vh-96px)] gap-4 rounded-2xl bg-gray-100 p-3">
+    <div className="flex h-[calc(100vh-96px)] gap-4 rounded-2xl bg-slate-100 p-3">
       <Sidebar
         notes={notes}
         selectedNoteId={selectedNoteId}

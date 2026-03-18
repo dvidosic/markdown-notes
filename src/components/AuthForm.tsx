@@ -58,12 +58,12 @@ export function AuthForm({ mode }: AuthFormProps) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-full max-w-sm space-y-4 rounded-xl border bg-white p-6 shadow-sm"
+      className="w-full max-w-sm space-y-4 rounded-xl bg-white border border-slate-200 p-6 shadow-md"
     >
-      <h1 className="text-xl font-semibold">
+      <h1 className="text-xl font-semibold text-slate-900">
         {isLogin ? "Welcome back" : "Create your account"}
       </h1>
-      <p className="text-sm text-gray-500">
+      <p className="text-sm text-slate-500">
         {isLogin
           ? "Sign in with your email to access your notes."
           : "Sign up with your email to start creating notes."}
@@ -82,7 +82,7 @@ export function AuthForm({ mode }: AuthFormProps) {
       )}
 
       <div className="space-y-1.5">
-        <label className="block text-sm font-medium text-gray-700" htmlFor="email">
+        <label className="block text-sm font-medium text-slate-700" htmlFor="email">
           Email
         </label>
         <input
@@ -91,13 +91,13 @@ export function AuthForm({ mode }: AuthFormProps) {
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full rounded-md border px-3 py-2 text-sm shadow-sm outline-none ring-0 focus:border-gray-900"
+          className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 shadow-sm outline-none ring-0 focus:border-slate-600"
           placeholder="you@example.com"
         />
       </div>
 
       <div className="space-y-1.5">
-        <label className="block text-sm font-medium text-gray-700" htmlFor="password">
+        <label className="block text-sm font-medium text-slate-700" htmlFor="password">
           Password
         </label>
         <input
@@ -107,7 +107,7 @@ export function AuthForm({ mode }: AuthFormProps) {
           minLength={6}
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full rounded-md border px-3 py-2 text-sm shadow-sm outline-none ring-0 focus:border-gray-900"
+          className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 shadow-sm outline-none ring-0 focus:border-slate-600"
           placeholder="********"
         />
       </div>
@@ -115,7 +115,7 @@ export function AuthForm({ mode }: AuthFormProps) {
       <button
         type="submit"
         disabled={loading}
-        className="flex w-full items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-black disabled:cursor-not-allowed disabled:opacity-70"
+        className="flex w-full items-center justify-center rounded-md bg-slate-900 px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-black disabled:cursor-not-allowed disabled:opacity-70"
       >
         {loading ? (isLogin ? "Signing in..." : "Creating account...") : isLogin ? "Sign in" : "Sign up"}
       </button>
