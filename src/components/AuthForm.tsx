@@ -16,12 +16,14 @@ export function AuthForm({ mode }: AuthFormProps) {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState<string | null>(null);
 
   const isLogin = mode === "login";
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
     setError(null);
+    setSuccess(null);
     setLoading(true);
 
     try {
@@ -30,15 +32,20 @@ export function AuthForm({ mode }: AuthFormProps) {
           { email, password }
         );
         if (signInError) throw signInError;
+        router.push("/notes");
       } else {
-        const { error: signUpError } = await supabaseClient.auth.signUp({
+        const { data, error: signUpError } = await supabaseClient.auth.signUp({
           email,
           password,
         });
         if (signUpError) throw signUpError;
-      }
 
-      router.push("/notes");
+        if (data.session) {
+          router.push("/notes");
+        } else {
+          setSuccess("Check your inbox — we sent you a confirmation email.");
+        }
+      }
     } catch (err) {
       const message =
         err instanceof Error ? err.message : "Something went wrong. Please try again.";
@@ -65,6 +72,12 @@ export function AuthForm({ mode }: AuthFormProps) {
       {error && (
         <div className="rounded-md border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700">
           {error}
+        </div>
+      )}
+
+      {success && (
+        <div className="rounded-md border border-green-200 bg-green-50 px-3 py-2 text-sm text-green-800">
+          {success}
         </div>
       )}
 
